@@ -84,7 +84,7 @@ body {
     text-align: center;
 }
 
-/* كارد أساسي كبير للموبايل */
+/* كارد أساسي */
 .main-card {
     padding: 30px 18px 24px;
     border-radius: 26px;
@@ -163,7 +163,7 @@ body {
     margin-top: 10px;
 }
 
-/* زرار ملكي */
+/* زر */
 .btn {
     display: flex;
     align-items: center;
@@ -199,7 +199,7 @@ body {
     box-shadow: 0 0 8px rgba(0,0,0,0.8);
 }
 
-/* نص الزر */
+/* نص */
 .btn-text-block {
     display: flex;
     flex-direction: column;
@@ -223,13 +223,66 @@ body {
     opacity: 0.9;
 }
 
-/* موبايل */
+/* نسخة موبايل كبيرة — XL */
 @media (max-width: 480px) {
-    .brand-title {
-        font-size: 29px;
+
+    .page {
+        padding: 40px 10px 20px;
     }
+
+    .main-card {
+        transform: scale(1.25);
+        padding: 28px 12px 20px;
+    }
+
     .logo {
-        width: 300px;
+        width: 330px;
+        max-width: 90vw;
+    }
+
+    .brand-title {
+        font-size: 38px;
+        letter-spacing: 5px;
+    }
+
+    .brand-main-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .brand-sub {
+        font-size: 20px;
+        letter-spacing: 3px;
+    }
+
+    .btn {
+        width: 95%;
+        padding: 18px;
+        font-size: 18px;
+        border-radius: 18px;
+    }
+
+    .icon-small {
+        width: 42px;
+        height: 42px;
+    }
+
+    .btn-text-main {
+        font-size: 18px;
+    }
+
+    .btn-text-sub {
+        font-size: 12px;
+    }
+
+    .border-frame {
+        inset: 4px !important;
+        border-width: 1px;
+    }
+
+    .top-bar {
+        transform: scale(1.15);
+        top: 6px;
     }
 }
 </style>
@@ -259,7 +312,7 @@ body {
                 <img src="https://raw.githubusercontent.com/mohamed-seyam-123/class-a/main/assets/logo.png" class="logo">
             </div>
 
-            <!-- اسم البراند -->
+            <!-- عنوان البراند -->
             <div class="brand-title">
                 CLASS A
                 <img class="brand-main-icon" src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png">
@@ -270,7 +323,7 @@ body {
 
             <div class="separator"></div>
 
-            <!-- ترتيب جديد -->
+            <!-- أزرار -->
             <div class="btns">
 
                 <!-- Instagram -->
@@ -288,6 +341,15 @@ body {
                     <div class="btn-text-block">
                         <span class="btn-text-main">Facebook</span>
                         <span class="btn-text-sub">Posts • Offers • Reviews</span>
+                    </div>
+                </a>
+
+                <!-- TikTok -->
+                <a class="btn" href="https://www.tiktok.com/@class_a_wtches?_r=1&_t=ZS-91pk3PYNf9d">
+                    <img class="icon-small" src="https://cdn-icons-png.flaticon.com/512/3046/3046120.png">
+                    <div class="btn-text-block">
+                        <span class="btn-text-main">TikTok</span>
+                        <span class="btn-text-sub">Short videos • New drops</span>
                     </div>
                 </a>
 
