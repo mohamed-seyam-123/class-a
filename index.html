@@ -2,51 +2,222 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>CLASS A WATCHES AND PERFUMES</title>
+<title>CLASS A – Luxury Edition</title>
+
 <style>
-    body {
-        background-color: #000;
-        font-family: 'Poppins', sans-serif;
-        text-align: center;
-        padding: 30px;
-        color: #d4af37;
-    }
-    .logo {
-        width: 300px;
-        margin-top: 20px;
-        border-radius: 12px;
-    }
-    h1 {
-        font-size: 32px;
-        margin-top: 20px;
-        color: #d4af37;
-        letter-spacing: 2px;
-    }
-    .btn {
-        display: block;
-        width: 80%;
-        margin: 15px auto;
-        padding: 14px;
-        font-size: 20px;
-        color: black;
-        background-color: #d4af37;
-        border-radius: 10px;
-        font-weight: bold;
-        text-decoration: none;
-    }
+/* خلفية دهبي 3D متحركة */
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    font-family: 'Poppins', sans-serif;
+    color: #d4af37;
+    overflow-x: hidden;
+}
+
+/* Texture Gold */
+.gold-texture {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url('https://i.ibb.co/8K8jgk7/gold-texture.jpg');
+    background-size: cover;
+    opacity: 0.07;
+    z-index: -3;
+}
+
+/* إضاءة ذهبية */
+.back-glow {
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,220,100,0.15) 0%, transparent 70%);
+    top: -50%;
+    left: -50%;
+    animation: rotateGlow 18s linear infinite;
+    z-index: -2;
+}
+@keyframes rotateGlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* إطار ملكي للصفحة */
+.border-frame {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    border: 6px solid rgba(212,175,55,0.5);
+    box-shadow: 0 0 25px rgba(212,175,55,0.7) inset;
+    pointer-events: none;
+}
+
+/* اللوجو + إضاءة سكينر */
+.logo-box {
+    margin-top: 45px;
+    padding: 20px;
+    border: 3px solid #d4af37;
+    border-radius: 25px;
+    box-shadow: 0 0 25px rgba(212,175,55,0.5);
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    animation: logoAppear 2s ease forwards;
+    opacity: 0;
+}
+@keyframes logoAppear {
+    0% { transform: scale(0.6); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* ضوء ماسح */
+.scanner-light {
+    position: absolute;
+    top: -150%;
+    left: 0;
+    width: 100%;
+    height: 150%;
+    background: linear-gradient(180deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: scan 4s infinite;
+}
+@keyframes scan {
+    0% { top: -150%; }
+    100% { top: 150%; }
+}
+
+.logo {
+    width: 260px;
+    border-radius: 16px;
+}
+
+/* العنوان */
+.title {
+    margin-top: 20px;
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    animation: fadeDown 1.6s ease forwards;
+}
+@keyframes fadeDown {
+    0% { opacity: 0; transform: translateY(-40px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.app-icon-main {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    border: 2px solid #d4af37;
+    animation: bounce 2s infinite;
+}
+@keyframes bounce {
+    50% { transform: translateY(-6px); }
+}
+
+/* ساب تايتل */
+h2 {
+    margin: 4px;
+    color: #b78e2c;
+    font-size: 22px;
+    letter-spacing: 2px;
+    animation: fadeIn 2s ease 0.8s forwards;
+    opacity: 0;
+}
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* الأزرار – Luxury Glass Buttons */
+.btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 85%;
+    margin: 20px auto;
+    padding: 15px;
+    font-size: 22px;
+    background: rgba(212,175,55,0.15);
+    border: 1.8px solid rgba(212,175,55,0.7);
+    border-radius: 16px;
+    backdrop-filter: blur(6px);
+    color: #d4af37;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 0 18px rgba(212,175,55,0.25);
+    transition: 0.35s;
+    opacity: 0;
+    transform: translateY(55px);
+    animation: fadeUp 1.4s forwards;
+}
+
+.btn:nth-child(5) { animation-delay: 0.4s; }
+.btn:nth-child(6) { animation-delay: 0.6s; }
+.btn:nth-child(7) { animation-delay: 0.8s; }
+.btn:nth-child(8) { animation-delay: 1s; }
+
+@keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 30px rgba(212,175,55,0.8);
+}
+
+/* أيقونات التطبيقات */
+.icon-small {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    animation: iconPulse 2.2s infinite;
+}
+@keyframes iconPulse {
+    50% { transform: scale(1.15); }
+}
 </style>
 </head>
+
 <body>
 
-    <!-- اللوجو الجديد -->
-    <img src="https://i.ibb.co/3YTBMBkx/logo.jpg" class="logo">
+<div class="gold-texture"></div>
+<div class="back-glow"></div>
+<div class="border-frame"></div>
 
-    <h1>CLASS A WATCHES AND PERFUMES</h1>
+<center>
+    <div class="logo-box">
+        <div class="scanner-light"></div>
+        <img src="https://raw.githubusercontent.com/mohamed-seyam-123/class-a/main/assets/logo.png" class="logo">
+    </div>
 
-    <a class="btn" href="https://wa.me/201275766559">WhatsApp</a>
-    <a class="btn" href="https://www.instagram.com/class_a_watches77?igsh=eGl6cXQxMDdnOGFs">Instagram</a>
-    <a class="btn" href="https://www.facebook.com/share/1F7p6ek8XX/">Facebook</a>
-    <a class="btn" href="https://t.me/theclassic_man">Telegram</a>
+    <div class="title">
+        CLASS A
+        <img class="app-icon-main" src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png">
+    </div>
+
+    <h2>WATCHES AND PERFUMES</h2>
+
+    <!-- Buttons -->
+    <a class="btn" href="https://wa.me/201275766559">
+        <img class="icon-small" src="https://cdn-icons-png.flaticon.com/512/124/124034.png"> WhatsApp
+    </a>
+
+    <a class="btn" href="https://www.instagram.com/class_a_watches77?igsh=eGl6cXQxMDdnOGFs">
+        <img class="icon-small" src="https://cdn-icons-png.flaticon.com/512/733/733558.png"> Instagram
+    </a>
+
+    <a class="btn" href="https://www.facebook.com/share/1F7p6ek8XX/">
+        <img class="icon-small" src="https://cdn-icons-png.flaticon.com/512/733/733547.png"> Facebook
+    </a>
+
+    <a class="btn" href="https://t.me/theclassic_man">
+        <img class="icon-small" src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png"> Telegram
+    </a>
+</center>
 
 </body>
 </html>
